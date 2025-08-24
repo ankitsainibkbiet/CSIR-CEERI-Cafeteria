@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+.animate-marquee {
+  display: flex;
+  min-width: 200%;
+  animation: marquee 35s linear infinite;
+}
+@keyframes marquee {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+body{
+  background-color: #e2e7e6;
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #000000;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

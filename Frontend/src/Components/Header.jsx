@@ -113,7 +113,7 @@ function Header() {
                                                 {isAdmin === "68bd0da4552a25f5e8729511" && (
                                                     <li className="hover:bg-green-500 duration-500">
                                                         <Link
-                                                            to="/admin/create"
+                                                            to="/product/create"
                                                             onClick={() => setShowDropdown(false)}
                                                             className="block px-4 py-2"
                                                         >

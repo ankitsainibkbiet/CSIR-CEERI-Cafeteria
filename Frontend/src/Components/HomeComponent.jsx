@@ -198,7 +198,7 @@ function HomeComponent() {
 
                     {isAuthenticated && isAdmin === "68bd0da4552a25f5e8729511" && (
                         <div className="flex flex-col sm:flex-row justify-around items-center text-sm gap-2 mt-2">
-                            <Link to={`/product/edit/${item.name.replaceAll(' ', '-')}`} className="w-full sm:w-auto">
+                            <Link to={`/admin/edit/${item.name.replaceAll(' ', '-')}`} className="w-full sm:w-auto">
                                 <button className="hover:bg-blue-600 text-white border duration-300 bg-blue-400 w-full sm:w-auto px-4 py-1 font-bold rounded">
                                     Edit
                                 </button>

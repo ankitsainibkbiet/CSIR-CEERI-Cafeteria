@@ -1,8 +1,11 @@
-// models/Order.js
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+    userId: { 
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User", 
+        required: true 
+    },
     items: [
         {
             productId: mongoose.Schema.Types.ObjectId,
@@ -13,7 +16,10 @@ const orderSchema = new mongoose.Schema({
         }
     ],
     totalAmount: Number,
-    status: { type: String, default: "Pending" },
+    status: { 
+        type: String, 
+        default: "Pending" 
+    },
     paymentId: String,
     orderId: String,
     signature: String,

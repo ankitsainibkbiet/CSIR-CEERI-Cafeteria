@@ -196,7 +196,7 @@ function HomeComponent() {
                         </button>
                     </div>
 
-                    {isAuthenticated && isAdmin === "687489051558a43590790d33" && (
+                    {isAuthenticated && isAdmin === "68bd0da4552a25f5e8729511" && (
                         <div className="flex flex-col sm:flex-row justify-around items-center text-sm gap-2 mt-2">
                             <Link to={`/product/edit/${item._id}`} className="w-full sm:w-auto">
                                 <button className="hover:bg-blue-600 text-white border duration-300 bg-blue-400 w-full sm:w-auto px-4 py-1 font-bold rounded">

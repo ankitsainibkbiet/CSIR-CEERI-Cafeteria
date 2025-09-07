@@ -70,10 +70,10 @@ function Header() {
                     <nav className="hidden md:flex">
                         <ul className="flex space-x-8 text-lg font-medium items-center">
                             <li>
-                                <Link to="/" className="hover:text-[#febd68] transition hover:scale-[105%] duration-300">Home</Link>
+                                <Link to="/" className="hover:text-[#febd68] transition-all flex hover:scale-[105%] duration-300">Home</Link>
                             </li>
                             <li>
-                                <Link to="/order" className="hover:text-[#febd68] transition hover:scale-[105%] duration-300">Orders</Link>
+                                <Link to="/order" className="hover:text-[#febd68] transition-all flex hover:scale-[105%] duration-300">Orders</Link>
                             </li>
 
                             {/* ACCOUNT DROPDOWN */}

@@ -37,7 +37,7 @@ router.post("/create", isAuthenticated, upload.single("image"), async (req, res)
 
 router.get("/:id", async (req, res) => {
     try {
-        const productName = req.params.id
+        let productName = req.params.id
         productName = productName.replaceAll('-', ' ').replaceAll('&', ' ')
         const product = await Product.findOne({name: productName});
         if (!product) {

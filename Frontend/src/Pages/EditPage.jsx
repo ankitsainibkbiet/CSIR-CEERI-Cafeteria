@@ -17,7 +17,7 @@ function EditProduct() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/product/${id}`);
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/product/${id.replaceAll(' ', '-')}`);
                 console.log(res.data)
                 setFormData({
                     name: res.data.product.name,

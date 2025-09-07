@@ -37,7 +37,7 @@ router.post("/create", isAuthenticated, upload.single("image"), async (req, res)
 
 router.get("/:id", async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id);
+        const product = await Product.findOne({name: req.params.id});
         if (!product) {
             return res.status(404).json({ success: false, message: "Product not found" });
         }

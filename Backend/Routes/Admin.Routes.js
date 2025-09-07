@@ -9,7 +9,7 @@ const router = express.Router();
 router.get("/orders", isAuthenticated, async (req, res) => {
     try {
         // Check if user is admin (replace with your actual admin ID or role check)
-        if (req.user._id.toString() !== "687489051558a43590790d33") {
+        if (req.user._id.toString() !== "68bd0da4552a25f5e8729511") {
             return res.status(403).json({ success: false, message: "Access denied" });
         }
 
@@ -22,7 +22,7 @@ router.get("/orders", isAuthenticated, async (req, res) => {
 
 // PATCH update status
 router.patch("/orders/:id", isAuthenticated, async (req, res) => {
-    if (req.user._id.toString() !== "687489051558a43590790d33") {
+    if (req.user._id.toString() !== "68bd0da4552a25f5e8729511") {
         return res.status(403).json({ error: "Access denied" });
     }
 

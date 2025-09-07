@@ -53,7 +53,6 @@ router.get("/logout", (req, res, next) => {
     });
 });
 
-// routes/user.js
 router.get("/orders", isAuthenticated, async (req, res) => {
     const orders = await Order.find({ userId: req.user._id }).sort({ createdAt: -1 });
     res.json({ success: true, orders });

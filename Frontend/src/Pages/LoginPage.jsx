@@ -28,7 +28,7 @@ function Login() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-rose-100 to-teal-100 flex items-center justify-center px-4 font-serif">
+        <div className="min-h-screen bg-linear-to-br from-rose-100 to-teal-100 flex items-center justify-center px-4 font-serif">
             <div className="bg-white w-full max-w-md p-6 sm:p-8 rounded-xl shadow-lg">
                 <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">Welcome Back</h2>
 

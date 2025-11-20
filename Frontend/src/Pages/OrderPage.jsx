@@ -38,7 +38,7 @@ function Order() {
 
     return (
         <Container>
-            <div className="min-h-screen bg-gradient-to-br from-white to-rose-100 py-10 px-4 font-serif">
+            <div className="min-h-screen bg-linear-to-br from-white to-rose-100 py-10 px-4 font-serif">
                 <h1 className="text-3xl font-bold text-center mb-8">Your Orders</h1>
 
                 <div className="max-w-5xl mx-auto space-y-8">

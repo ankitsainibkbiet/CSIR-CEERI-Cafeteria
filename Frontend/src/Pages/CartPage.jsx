@@ -47,62 +47,6 @@ function Cart() {
     const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
 
-
-    // Hanlde Payment
-    const handlePayment = async () => {
-        try {
-            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/create-order`, {
-                amount: totalAmount
-            }, { withCredentials: true });
-            const { order } = res.data;
-
-            const resUser = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/user/auth`, {
-                withCredentials: true
-            });
-            const user = resUser.data.user;
-
-            const options = {
-                key: import.meta.env.VITE_RAZORPAY_KEY_ID,
-                amount: order.amount,
-                currency: "INR",
-                name: "CSIR-CEERI Cafeteria",
-                description: "Coupon Booking",
-                order_id: order.id,
-                handler: async function (response) {
-                    try {
-                        await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/verify`, {
-                            razorpay_order_id: response.razorpay_order_id,
-                            razorpay_payment_id: response.razorpay_payment_id,
-                            razorpay_signature: response.razorpay_signature
-                        }, { withCredentials: true });
-                        alert("Payment Successful!");
-                        navigate("/order");
-                    } catch (err) {
-                        console.error("Verification failed:", err);
-                        alert("Payment verification failed");
-                    }
-                },
-                prefill: {
-                    name: user.username,
-                    email: user.email || "support@ceeri.res.in",
-                    contact: "9999999999"
-                },
-                theme: { color: "#28a745" }
-            };
-
-            const rzp = new window.Razorpay(options);
-            rzp.open();
-
-        } catch (err) {
-            alert("Payment failed");
-            console.error(err);
-        }
-    };
-
-
-
-
-
     if (loading) {
         return (
             <div className="h-screen flex flex-col items-center mt-15">
@@ -117,7 +61,7 @@ function Cart() {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white to-rose-100 py-10 px-4 font-serif">
+        <div className="min-h-screen bg-linear-to-br from-white to-rose-100 py-10 px-4 font-serif">
             <h1 className="text-3xl font-bold text-center mb-8">Your Cart</h1>
             <div className="max-w-4xl mx-auto space-y-6">
                 {cartItems.map((item) => (
@@ -146,7 +90,6 @@ function Cart() {
                 <div className="text-xl font-bold flex justify-end items-center gap-4">
                     <p>Total: ₹{totalAmount}</p>
                     <button
-                        onClick={handlePayment}
                         className="bg-[#28a745] hover:bg-green-700 rounded text-white px-3 py-1 text-lg cursor-pointer" >
                         proceed to pay
                     </button>

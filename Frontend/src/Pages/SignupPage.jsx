@@ -27,7 +27,7 @@ function Signup() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-r from-rose-100 to-teal-100 flex items-center justify-center font-serif">
+        <div className="min-h-screen bg-linear-to-br from-rose-100 to-teal-100 flex items-center justify-center font-serif">
             <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Create Account</h2>
                 {error && <div className="mb-4 text-red-600 text-sm text-center">{error}</div>}

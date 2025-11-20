@@ -60,7 +60,7 @@ function EditProduct() {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-white to-rose-100 px-4 py-10 font-serif">
+        <div className="min-h-screen bg-linear-to-br from-white to-rose-100 px-4 py-10 font-serif">
             <div className="max-w-xl mx-auto bg-white shadow-lg rounded-lg p-6">
                 <h2 className="text-2xl font-bold text-center mb-4">Edit Product</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">

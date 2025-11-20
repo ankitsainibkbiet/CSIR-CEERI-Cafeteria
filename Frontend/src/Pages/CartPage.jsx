@@ -47,6 +47,7 @@ function Cart() {
     const totalAmount = cartItems.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
 
+    
     if (loading) {
         return (
             <div className="h-screen flex flex-col items-center mt-15">

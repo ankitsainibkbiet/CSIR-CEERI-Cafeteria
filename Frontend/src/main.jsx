@@ -9,7 +9,6 @@ import OrderPage from './Pages/OrderPage.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import EditPage from './Pages/EditPage.jsx'
 import CreatePage from './Pages/CreatePage.jsx'
-import AdminDashboard from './Pages/AdminPage.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <App/>, children: [
@@ -20,7 +19,6 @@ const router = createBrowserRouter([
     {path: "/order", element: <OrderPage/>},
     {path: "/product/edit/:id", element: <EditPage/>},
     {path: "/product/create", element: <CreatePage/>},
-    {path: "/admin", element: <AdminDashboard/>},
   ]}
 ])
 
